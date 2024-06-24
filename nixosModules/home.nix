@@ -72,11 +72,10 @@
   home.file = {
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
     "Pictures/nixchan.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixchan.png";
+    ".config/waybar/config".source = ./waybar/config;
+    ".config/hyprland".recursive = ./hyprland;
   };
 
-  environment.etc = {
-    "xdg/waybar/config".source = ./waybar/config;
-  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -121,6 +120,7 @@
   };
 
   services.hyprpaper.settings = {
+    enable = true;
     ipc = "on";
     splash = false;
     splash_offset = 2.0;
