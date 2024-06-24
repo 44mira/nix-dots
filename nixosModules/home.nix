@@ -49,6 +49,7 @@
     pavucontrol
 
     wayshot
+    waybar
     slurp
     wl-clipboard
 
@@ -71,6 +72,10 @@
   home.file = {
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
     "Pictures/nixchan.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixchan.png";
+  };
+
+  environment.etc = {
+    "xdg/waybar/config".source = ./waybar/config;
   };
 
   home.sessionVariables = {
