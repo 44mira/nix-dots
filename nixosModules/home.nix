@@ -1,19 +1,6 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
-  
-  nixpkgs = {
-    overlays = [
-      (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          silicon-nvim = prev.vimUtils.buildVimPlugin {
-            name = "silicon-nvim";
-            src = inputs.plugin-silicon-nvim;
-          };
-        };
-      })
-    ];
-  };
 
   home.username = "tyrael";
   home.homeDirectory = "/home/tyrael";

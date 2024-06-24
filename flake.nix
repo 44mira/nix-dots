@@ -9,8 +9,8 @@
     };
 
     # external vim plugins
-    plugin-silicon-nvim.url = "https://github.com/michaelrommel/nvim-silicon";
-    plugin-silicon-nvim.flake = false;
+    plugin-silicon.url = "github:michaelrommel/nvim-silicon";
+    plugin-silicon.flake = false;
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 

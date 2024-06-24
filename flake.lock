@@ -36,23 +36,27 @@
         "type": "github"
       }
     },
-    "plugin-silicon-nvim": {
+    "plugin-silicon": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-oKL1IAEX7kKyjSztgryr6dIhDiL4B83gzE2vU2K+91I=",
-        "type": "file",
-        "url": "https://github.com/michaelrommel/nvim-silicon"
+        "lastModified": 1717109319,
+        "narHash": "sha256-MI99fgu2QJ1nXLVMixLjNcdWGQRbR4qePwN6HoDxukY=",
+        "owner": "michaelrommel",
+        "repo": "nvim-silicon",
+        "rev": "b305ad8a45210f0dc8bbba1494dea6af072c0ed2",
+        "type": "github"
       },
       "original": {
-        "type": "file",
-        "url": "https://github.com/michaelrommel/nvim-silicon"
+        "owner": "michaelrommel",
+        "repo": "nvim-silicon",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-silicon-nvim": "plugin-silicon-nvim"
+        "plugin-silicon": "plugin-silicon"
       }
     }
   },

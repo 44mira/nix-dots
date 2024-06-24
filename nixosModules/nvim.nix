@@ -1,4 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        vimPlugins = prev.vimPlugins // {
+          silicon = prev.vimUtils.buildVimPlugin {
+            name = "silicon";
+            src = inputs.plugin-silicon;
+          };
+        };
+      })
+    ];
+  };
 
   programs.neovim = 
     let
@@ -24,6 +37,8 @@
       ];
 
       plugins = with pkgs.vimPlugins; [
+
+        neodev-nvim
 
         {
           plugin = nvim-lspconfig;
@@ -60,7 +75,6 @@
 
         luasnip
         friendly-snippets
-
 
         lualine-nvim
         nvim-web-devicons
@@ -118,7 +132,7 @@
         }
 
         {
-          plugin = vimPlugins.silicon-nvim;
+          plugin = pkgs.vimPlugins.silicon;
           config = toLuaFile ./nvim/plugin/silicon.lua;
         }
 
