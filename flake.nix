@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # external vim plugins
+    plugin-silicon-nvim.url = "https://github.com/michaelrommel/nvim-silicon";
+    plugin-silicon-nvim.flake = false;
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -37,6 +41,8 @@
         ./nixosModules/home.nix
         ./nixosModules
       ];
+
+      extraSpecialArgs = { inherit inputs; };
     };
   };
 

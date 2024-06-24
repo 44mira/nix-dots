@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
 
   programs.zsh = {
     enable = true;
@@ -12,6 +12,9 @@
       ls = "exa";
       ll = "exa -l";
     };
+    initExtra = ''
+      eval "$(oh-my-posh init zsh --config ~/.omptheme.omp.toml)"
+    '';
   };
 
   programs.zoxide.enable = true;

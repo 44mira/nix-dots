@@ -5,6 +5,9 @@ vim.g.maplocalleader = " "
 -- save to clipboard
 vim.o.clipboard = "unnamedplus"
 
+-- Save undo history
+vim.opt.undofile = true
+
 -- line numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -22,6 +25,9 @@ vim.o.updatetime = 300
 vim.o.termguicolors = true
 
 vim.o.mouse = "a"
+
+-- set hl on search, clear on <ESC> in normal mode
+vim.o.hlsearch = true
 
 local bind = vim.keymap.set
 

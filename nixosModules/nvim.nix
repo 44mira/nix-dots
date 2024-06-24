@@ -1,4 +1,5 @@
-{ pkgs, config, inputs, ... }: {
+{ pkgs, ... }: {
+
   programs.neovim = 
     let
       toLua = str: "lua << EOF\n${str}\nEOF\n";
@@ -12,13 +13,14 @@
       vimdiffAlias = true;
 
       extraPackages = with pkgs; [
-        luajitPackages.lua-lsp
+        lua-language-server
         nil
         stylua
         prettierd
 
         xclip
         wl-clipboard
+        silicon
       ];
 
       plugins = with pkgs.vimPlugins; [
@@ -115,12 +117,17 @@
           config = toLuaFile ./nvim/plugin/conform.lua;
         }
 
-        aerial-nvim
+        {
+          plugin = vimPlugins.silicon-nvim;
+          config = toLuaFile ./nvim/plugin/silicon.lua;
+        }
 
-        # {
-        #   plugin = vimPlugins.own-onedark-nvim;
-        #   config = "colorscheme onedark";
-        # }
+        {
+          plugin = neoscroll-nvim;
+          config = toLuaFile ./nvim/plugin/neoscroll.lua;
+        }
+
+        aerial-nvim
       ];
 
       extraLuaConfig = ''
