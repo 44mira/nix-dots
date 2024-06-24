@@ -28,9 +28,9 @@
         "on-click": "activate",
         "format-icons": {
             "1": "\uf489",
-            "2": " ",
-            "3": "\udb82\ude1e",
-            "4": "\uf001",
+            "2": "󰈹",
+            "3": "",
+            "4": "",
         },
         "icon-size": 50,
         "sort-by-number": true,
@@ -43,7 +43,7 @@
     },
 
     "clock": {
-        "format": "{:%d.%m.%Y | %H:%M}"
+        "format": " {:%d.%m.%Y | %H:%M} "
     },
 
     "wireplumber": {

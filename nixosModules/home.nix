@@ -2,7 +2,6 @@
 
 {
 
-
   stylix = {
     enable = true;
     autoEnable = true;
@@ -26,6 +25,10 @@
         desktop = 14;
         applications = 14;
       };
+    };
+
+    targets = {
+      waybar.enableCenterBackColors = true;
     };
   };
 
@@ -73,7 +76,8 @@
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
     "Pictures/nixchan.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixchan.png";
     ".config/waybar/config".source = ./waybar/config;
-    ".config/hyprland".recursive = ./hyprland;
+    ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+    ".config/hypr/start.sh".source = ./hypr/start.sh;
   };
 
 
@@ -117,21 +121,6 @@
       };
     };
 
-  };
-
-  services.hyprpaper.settings = {
-    enable = true;
-    ipc = "on";
-    splash = false;
-    splash_offset = 2.0;
-
-    preload = [
-      "~/Pictures/nixchan.png"
-    ];
-
-    wallpaper = [
-      "DP-1,~/Pictures/nixchan.png"
-    ];
   };
 
   # Let Home Manager install and manage itself.
