@@ -11,6 +11,8 @@
       ff = "fastfetch --disable-linewrap";
       ls = "exa";
       ll = "exa -l";
+      mhc = "man home-configuration.nix";
+      mnc = "man configuration.nix";
     };
     initExtra = ''
       eval "$(oh-my-posh init zsh --config ~/.omptheme.omp.toml)"

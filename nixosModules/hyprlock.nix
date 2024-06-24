@@ -1,18 +1,18 @@
-{ pkgs, ... }: {
+{ config, ... }: {
 
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 300;
+        grace = 100;
         hide_cursor = true;
         no_fade_in = false;
       }; 
 
       background = [
         {
-          path = ../nixchan.png;
+          path = "${config.home.homeDirectory}/Pictures/nixchan.png";
           blur_passes = 3;
           blur_size = 8;
         }

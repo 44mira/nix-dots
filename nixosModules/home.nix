@@ -115,6 +115,20 @@
 
   };
 
+  services.hyprpaper.settings = {
+    ipc = "on";
+    splash = false;
+    splash_offset = 2.0;
+
+    preload = [
+      "~/Pictures/nixchan.png"
+    ];
+
+    wallpaper = [
+      "DP-1,~/Pictures/nixchan.png"
+    ];
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
