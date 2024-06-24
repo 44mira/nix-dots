@@ -5,7 +5,7 @@
       name = "FantasqueSansM Nerd Font";
       size = 18;
     };
-    theme = "Catppuccin-Mocha";
+    # theme = "Catppuccin-Mocha";
     settings = {
       window_padding_width = 5;
       enabled_layouts = "horizontal, fat, stack";

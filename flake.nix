@@ -8,6 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
+
     # external vim plugins
     plugin-silicon.url = "github:michaelrommel/nvim-silicon";
     plugin-silicon.flake = false;
@@ -29,7 +31,10 @@
     tyrael = nixpkgs.lib.nixosSystem {
       inherit system;
 
-      modules = [ ./nixos/configuration.nix ];
+      modules = [ 
+        ./nixos/configuration.nix
+        inputs.stylix.nixosModules.stylix
+      ];
     };
   };
 

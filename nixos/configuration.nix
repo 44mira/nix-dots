@@ -2,13 +2,17 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+
+  stylix.enable = true;
+  stylix.image = ./nixchan.png;
+  stylix.polarity = "dark";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -51,8 +55,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "ph";
-    xkbVariant = "";
+    xkb.layout = "ph";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -105,7 +109,7 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
 
