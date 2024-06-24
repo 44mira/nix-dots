@@ -2,6 +2,25 @@
 
 {
 
+
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    image = ../nixchan.png;
+    polarity = "dark";
+
+    fonts = {
+      monospace = {
+        package = pkgs.nerdfonts;
+        name = "FantasqueSansM Nerd Font";
+      };
+
+      sizes = {
+        terminal = 17;
+      };
+    };
+  };
+
   home.username = "tyrael";
   home.homeDirectory = "/home/tyrael";
 
@@ -68,12 +87,14 @@
       enable = true;
     };
 
-  };
+    waybar = {
+      enable = true;
+    };
 
-  gtk = {
-    enable = true;
-    theme.name = "spacx-gtk-theme";
-    cursorTheme.name = "Bibata-Modern-Ice";
+    rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+    };
   };
 
   # Let Home Manager install and manage itself.

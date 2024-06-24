@@ -10,9 +10,23 @@
       ./hardware-configuration.nix
     ];
 
-  stylix.enable = true;
-  stylix.image = ./nixchan.png;
-  stylix.polarity = "dark";
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    image = ../nixchan.png;
+    polarity = "dark";
+
+    fonts = {
+      monospace = {
+        name = "FantasqueSansM Nerd Font";
+        package = pkgs.nerdfonts;
+      };
+
+      sizes = {
+        terminal = 17;
+      };
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -125,8 +139,6 @@
      )
      dunst
      libnotify
-     kitty
-     rofi-wayland
      networkmanagerapplet
      home-manager
   #  wget
