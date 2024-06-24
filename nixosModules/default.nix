@@ -6,5 +6,6 @@
     ./kitty.nix
     ./zsh.nix
     ./nvim.nix
+    ./fastfetch.nix
   ];
 }

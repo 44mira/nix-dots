@@ -7,6 +7,7 @@
 
   home.stateVersion = "23.11"; 
 
+# [[ Installed packages ]] {{{
   home.packages = with pkgs; [
     eza
     oh-my-posh
@@ -38,6 +39,7 @@
     wget
     curl
   ];
+# }}}
 
   home.file = {
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
@@ -64,6 +66,7 @@
     yazi = {
       enable = true;
     };
+
   };
 
   gtk = {
