@@ -80,6 +80,9 @@ end, {
 -- [[ Sanity binds ]] {{{
 bind("i", "jk", "<Esc>", { desc = "Normal mode" })
 bind("n", "<leader>f", "<CMD>Oil<CR>", { desc = "Open Oil" })
+bind("v", "<leader><leader>", function()
+	require("nvim-silicon").clip()
+end, { desc = "[ ][ ] Take code snapshot" })
 -- }}}
 
 -- [[ Buffer controls ]] {{{
