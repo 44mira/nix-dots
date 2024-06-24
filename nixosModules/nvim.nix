@@ -26,14 +26,22 @@
       vimdiffAlias = true;
 
       extraPackages = with pkgs; [
+
+# [[ LSP and Formatters ]] {{{
         lua-language-server
+        pyright
+        gopls
         nil
         stylua
         prettierd
+# }}}
 
+# [[ Utilities ]] {{{
         xclip
         wl-clipboard
         silicon
+# }}}
+
       ];
 
       plugins = with pkgs.vimPlugins; [
