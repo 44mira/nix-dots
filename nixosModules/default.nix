@@ -7,5 +7,6 @@
     ./zsh.nix
     ./nvim.nix
     ./fastfetch.nix
+    ./hyprlock.nix
   ];
 }

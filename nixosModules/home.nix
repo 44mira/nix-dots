@@ -15,8 +15,16 @@
         name = "FantasqueSansM Nerd Font";
       };
 
+      sansSerif = {
+        package = pkgs.nerdfonts;
+        name = "CommitMono Nerd Font";
+      };
+
       sizes = {
         terminal = 17;
+        popups = 13;
+        desktop = 14;
+        applications = 14;
       };
     };
   };
@@ -67,6 +75,8 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    MANPAGER="sh -c 'col -bx | bat -l man -p'";
+    MANROFFOPT="-c";
   };
 
   xdg.mimeApps.defaultApplications = {
@@ -95,6 +105,14 @@
       enable = true;
       package = pkgs.rofi-wayland;
     };
+
+    bat = {
+      enable = true;
+      config = {
+        theme = "base16-stylix";
+      };
+    };
+
   };
 
   # Let Home Manager install and manage itself.
