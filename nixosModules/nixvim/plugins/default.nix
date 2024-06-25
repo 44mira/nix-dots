@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+
+let
+  toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+in
 {
 
   imports = [
@@ -9,6 +13,19 @@
     ./startify.nix
     ./neoscroll.nix
   ];
+
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        vimPlugins = prev.vimPlugins // {
+          silicon = prev.vimUtils.buildVimPlugin {
+            name = "silicon";
+            src = inputs.plugin-silicon;
+          };
+        };
+      })
+    ];
+  };
 
   programs.nixvim = {
 
@@ -30,6 +47,11 @@
       nvim-web-devicons         # file icons
       telescope-ui-select-nvim  # telescope ui
       telescope-fzf-native-nvim # fzf algo for telescope
+
+      {
+        plugin = pkgs.vimPlugins.silicon;
+        config = toLuaFile ./silicon.lua;
+      }
     ];
   };
 }
