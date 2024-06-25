@@ -137,9 +137,9 @@
      	})
      )
      dunst
+     swww
      libnotify
      networkmanagerapplet
-     swww
      home-manager
   ];
 

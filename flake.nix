@@ -8,11 +8,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix.url = "github:danth/stylix";
 
     # external vim plugins
-    plugin-silicon.url = "github:michaelrommel/nvim-silicon";
-    plugin-silicon.flake = false;
+    plugin-silicon = {
+      url = "github:michaelrommel/nvim-silicon";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -29,7 +37,7 @@
 
   nixosConfigurations = {
     tyrael = nixpkgs.lib.nixosSystem {
-      inherit system;
+      inherit inputs;
 
       modules = [ 
         ./nixos/configuration.nix
@@ -46,6 +54,7 @@
         ./nixosModules/home.nix
         ./nixosModules
         inputs.stylix.homeManagerModules.stylix
+        inputs.nixvim.homeManagerModules.nixvim
       ];
 
       extraSpecialArgs = { inherit inputs; };
