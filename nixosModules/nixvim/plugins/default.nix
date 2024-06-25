@@ -6,6 +6,7 @@
     ./mini.nix
     ./telescope.nix
     ./lualine.nix
+    ./startify.nix
   ];
 
   programs.nixvim = {
@@ -20,7 +21,8 @@
         };
       };
 
-      oil.enable = true;
+      oil.enable = true;    # file management
+      trim.enable = true;   # trim whitespace using :Trim
     };
     
     extraPlugins = with pkgs.vimPlugins; [
