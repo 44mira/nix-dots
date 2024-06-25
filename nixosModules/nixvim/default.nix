@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ./options.nix
@@ -15,5 +16,14 @@
     vimAlias = true;
 
     luaLoader.enable = true;
+
+    extraPackages = with pkgs; [
+      silicon
+      prettierd
+      shfmt
+      gopls
+      black
+      codespell
+    ];
   };
 }

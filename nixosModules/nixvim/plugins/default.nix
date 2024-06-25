@@ -12,6 +12,7 @@ in
     ./lualine.nix
     ./startify.nix
     ./neoscroll.nix
+    ./conform-nvim.nix
   ];
 
   nixpkgs = {

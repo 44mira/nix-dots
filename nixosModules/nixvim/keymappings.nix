@@ -56,7 +56,7 @@
           "<leader>f" = "<CMD>Oil<CR>";
 
           # Buffer navigation
-          "<leader>bd" = "<CMD>:bd<CR>";
+          "<leader>bd" = "<CMD>:bd!<CR>";
           "<leader>b[" = "<CMD>:bp<CR>";
           "<leader>b]" = "<CMD>:bn<CR>";
         };
@@ -78,6 +78,7 @@
           "K" = ":m '<-2<CR>gv=gv";
           "J" = ":m '>+1<CR>gv=gv";
 
+          "<leader><leader>".__raw = "require('nvim-silicon').clip";
         };
     in
       config.nixvim.helpers.keymaps.mkKeymaps
