@@ -10,8 +10,8 @@
     };
 
     keymaps = let
-      insert = 
-        lib.mapAttrsToList 
+      insert =
+        lib.mapAttrsToList
         (key: action: {
           mode = "i";
           inherit action key;

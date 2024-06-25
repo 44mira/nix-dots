@@ -1,4 +1,3 @@
-
 {
   programs.nixvim.plugins.telescope = {
     enable = true;
@@ -42,7 +41,7 @@
           desc = "[S]earch [:]Command history";
         };
       };
-      "<leader>b" = {
+      "<leader><leader>" = {
         action = "buffers";
         options = {
           desc = "[S]earch [b]uffers";

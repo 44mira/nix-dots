@@ -2,10 +2,10 @@
 
   # name of all modules
   imports = [
-    ./home.nix   
+    ./home.nix
     ./kitty.nix
     ./zsh.nix
-    # ./nvim.nix
+    # ./nvim.nix  (kept for historic purposes)
     ./nixvim
     ./fastfetch.nix
     ./hyprlock.nix

@@ -7,6 +7,7 @@
     ./telescope.nix
     ./lualine.nix
     ./startify.nix
+    ./neoscroll.nix
   ];
 
   programs.nixvim = {
@@ -24,7 +25,7 @@
       oil.enable = true;    # file management
       trim.enable = true;   # trim whitespace using :Trim
     };
-    
+
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons         # file icons
       telescope-ui-select-nvim  # telescope ui
