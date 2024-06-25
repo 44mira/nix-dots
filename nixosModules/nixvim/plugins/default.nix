@@ -1,7 +1,9 @@
+{ pkgs, ... }:
 {
 
   imports = [
     ./treesitter.nix
+    ./mini.nix
   ];
 
   programs.nixvim = {
@@ -17,8 +19,10 @@
       };
 
       oil.enable = true;
-      nvim-autopairs.enable = true;
     };
 
+    extraPlugins = with pkgs.vimPlugins; [
+      nvim-web-devicons   # file icons
+    ];
   };
 }
