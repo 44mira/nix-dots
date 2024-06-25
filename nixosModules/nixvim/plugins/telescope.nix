@@ -1,10 +1,14 @@
 
 {
-  plugins.telescope = {
+  programs.nixvim.plugins.telescope = {
     enable = true;
 
     extensions = {
+      ui-select = {
+        enable = true;  # in case i add more
+      };
 
+      fzf-native.enable = true;
     };
 
     settings = {
@@ -18,6 +22,7 @@
       };
     };
 
+# [[ Keymaps ]] {{{
     keymaps = {
       "<leader>sf" = {
         action = "find_files";
@@ -99,5 +104,6 @@
         };
       };
     };
-  };
+  };# }}}
+
 }
