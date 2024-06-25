@@ -65,7 +65,7 @@
     ripgrep
     fd
     fzf
-    cargo
+    rustup
     unzip
     wget
     curl

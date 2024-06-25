@@ -5,6 +5,35 @@
     plugins = {
       luasnip.enable = true;
 
+# [[ LSP ]] {{{
+      lsp = {
+        enable = true;
+
+        servers = {
+          nil-ls.enable = true;
+          gopls.enable = true;
+          pyright.enable = true;
+          clangd.enable = true;
+          lua-ls.enable = true;
+          tsserver.enable = true;
+          bashls.enable = true;
+          html.enable = true;
+          cssls.enable = true;
+          tailwindcss.enable = true;
+          hls.enable = true;
+          elixirls.enable = true;
+
+          rust-analyzer = {
+            enable = true;
+
+            installCargo = false;
+            installRustc = false;
+          };
+        };
+# }}}
+
+      };
+
       lspkind = {
         enable = true;
 
@@ -47,7 +76,6 @@
               # Words from other open buffers can also be suggested.
               option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             }
-            {name = "neorg";}
           ];
         };
       };

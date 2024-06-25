@@ -52,7 +52,13 @@
           "<M-k>" = ":move-2<CR>";
           "<M-j>" = ":move+<CR>";
 
+          # Open Oil
           "<leader>f" = "<CMD>Oil<CR>";
+
+          # Buffer navigation
+          "<leader>bd" = "<CMD>:bd<CR>";
+          "<leader>b[" = "<CMD>:bp<CR>";
+          "<leader>b]" = "<CMD>:bn<CR>";
         };
 
       visual =

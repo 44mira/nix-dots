@@ -4,6 +4,7 @@
   imports = [
     ./treesitter.nix
     ./mini.nix
+    ./telescope.nix
   ];
 
   programs.nixvim = {
