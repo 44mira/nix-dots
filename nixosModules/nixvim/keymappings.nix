@@ -52,6 +52,7 @@
           "<M-k>" = ":move-2<CR>";
           "<M-j>" = ":move+<CR>";
 
+          "<leader>f" = "<CMD>Oil<CR>";
         };
 
       visual =

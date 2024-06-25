@@ -10,7 +10,6 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -24,42 +23,41 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
-  let
-		system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {
-        allowUnfree = true;
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
+    in 
+    {
+
+    nixosConfigurations = {
+      tyrael = nixpkgs.lib.nixosSystem {
+        inherit inputs;
+
+        modules = [ 
+          ./nixos/configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
       };
     };
-  in 
-  {
 
-  nixosConfigurations = {
-    tyrael = nixpkgs.lib.nixosSystem {
-      inherit inputs;
+    homeConfigurations = {
+      tyrael = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-      modules = [ 
-        ./nixos/configuration.nix
-        inputs.stylix.nixosModules.stylix
-      ];
+        modules = [
+          ./nixosModules/home.nix
+          ./nixosModules
+          inputs.stylix.homeManagerModules.stylix
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
+
+        extraSpecialArgs = { inherit inputs; };
+      };
     };
-  };
-
-  homeConfigurations = {
-    tyrael = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-
-      modules = [
-        ./nixosModules/home.nix
-        ./nixosModules
-        inputs.stylix.homeManagerModules.stylix
-        inputs.nixvim.homeManagerModules.nixvim
-      ];
-
-      extraSpecialArgs = { inherit inputs; };
-    };
-  };
-
   };
 }

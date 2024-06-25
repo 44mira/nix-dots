@@ -40,7 +40,7 @@
       cursorline = true; # Highlight the screen line of the cursor
       cursorcolumn = false; # Highlight the screen column of the cursor
       signcolumn = "yes"; # Whether to show the signcolumn
-      colorcolumn = "100"; # Columns to highlight
+      colorcolumn = "0"; # Columns to highlight
       laststatus = 3; # When to use a status line for the last window
       fileencoding = "utf-8"; # File-content encoding for the current buffer
       termguicolors = true; # Enables 24-bit RGB color in the |TUI|
@@ -57,7 +57,23 @@
       #   broken after white space to get this width.
 
       # Folding
-      foldlevel = 1; # Folds with a level higher than this number will be closed
+      foldlevel = 0;
+
+
+      foldmethod = "marker";
+      foldtext = "v:lua.FoldText()";
+      fillchars = { eob = " "; fold = "⋯"; };
+
     };
+
+    extraConfigLua = ''
+      FoldText = function()
+        local foldStart = vim.fn.getline(vim.v.foldstart)
+        local title = foldStart:match '%[%[ (.+) %]%] {{{.*' or foldStart:match '(.+){{{.*'
+        local icon = ' '
+
+        return icon .. '[[ ' .. title .. ' ]] '
+      end
+    '';
   };
 }

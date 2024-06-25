@@ -75,9 +75,9 @@
   home.file = {
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
     "Pictures/nixchan.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixchan.png";
-    ".config/waybar/config".source = ./waybar/config;
-    ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-    ".config/hypr/start.sh".source = ./hypr/start.sh;
+    ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./waybar/config;
+    ".config/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland.conf;
+    ".config/hypr/start.sh".source = config.lib.file.mkOutOfStoreSymlink ./hypr/start.sh;
   };
 
 
