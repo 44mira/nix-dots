@@ -445,6 +445,21 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1719370926,
+        "narHash": "sha256-O0yCXWqQjS+WFqja6tWKjMiZPno6E2ThKLB5M0A4kIU=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "3bf57d4cbf6dda397a62cc1bd7f86f9946f9695a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "plugin-silicon": {
       "flake": false,
       "locked": {
@@ -466,6 +481,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "nur": "nur",
         "plugin-silicon": "plugin-silicon",
         "stylix": "stylix"
       }

@@ -98,6 +98,12 @@
   # zshell
   programs.zsh.enable = true;
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tyrael = {
     isNormalUser = true;
@@ -131,16 +137,19 @@
   };
 
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     (waybar.overrideAttrs (oldAttrs: {
-	  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-     	})
-     )
-     dunst
-     swww
-     libnotify
-     networkmanagerapplet
-     home-manager
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    (waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      })
+    )
+    dunst
+    swww
+    libnotify
+    networkmanagerapplet
+    home-manager
+
+    nur.repos.nltch.spotify-adblock    #for installing spotify-adblock
+    nur.repos.nltch.ciscoPacketTracer8 #for installing packettracer8
   ];
 
   xdg.portal.enable = true;
@@ -164,5 +173,5 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.stateVersion = "24.05"; 
+  system.stateVersion = "24.05";
 }

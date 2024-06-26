@@ -15,6 +15,8 @@
 
     stylix.url = "github:danth/stylix";
 
+    nur.url = "github:nix-community/NUR";
+
     # external vim plugins
     plugin-silicon = {
       url = "github:michaelrommel/nvim-silicon";
@@ -22,7 +24,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, nur, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -31,16 +33,26 @@
           allowUnfree = true;
         };
       };
-    in 
+    in
     {
 
     nixosConfigurations = {
       tyrael = nixpkgs.lib.nixosSystem {
-        inherit inputs;
+        inherit system;
 
-        modules = [ 
+        modules = [
           ./nixos/configuration.nix
           inputs.stylix.nixosModules.stylix
+          { nixpkgs.overlays = [ nur.overlay ]; }
+          ({ pkgs, ... }:
+            let
+              nur-no-pkgs = import nur {
+                nurpkgs = import nixpkgs { system = "x86_64-linux"; };
+              };
+            in {
+              imports = [ nur-no-pkgs.repos.iopq.modules.xraya  ];
+              services.xraya.enable = true;
+            })
         ];
       };
     };

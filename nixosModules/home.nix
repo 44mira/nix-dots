@@ -39,16 +39,20 @@
 
 # [[ Installed packages ]] {{{
   home.packages = with pkgs; [
+    zoom-us
+    krita
+    vesktop
+
     eza
     oh-my-posh
     lazygit
     fastfetch
-    vesktop
     gh
     (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     sxiv
     mpv
+    xdg-utils
     pavucontrol
 
     wayshot
