@@ -8,6 +8,7 @@
     # ./nvim.nix  (kept for historic purposes)
     ./nixvim
     ./fastfetch.nix
+    ./rofi.nix
     ./hyprlock.nix
   ];
 }

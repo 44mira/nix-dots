@@ -55,6 +55,7 @@
     mpv
     xdg-utils
     pavucontrol
+    rofi-power-menu
     dolphin
     bottles
     lutris
@@ -84,6 +85,7 @@
   home.file = {
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
     "Pictures/nixchan.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixchan.png";
+    ".config/rofi/config.rasi".source = config.lib.file.mkOutOfStoreSymlink rofi/config.rasi;
     ".config/hypr/start.sh".source = config.lib.file.mkOutOfStoreSymlink ./hypr/start.sh;
     ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./waybar/config;
     ".config/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland.conf;
@@ -116,12 +118,6 @@
 
     waybar = {
       enable = true;
-    };
-
-    rofi = {
-      enable = true;
-      package = pkgs.rofi-wayland;
-      theme = ./rofi/config.rasi;
     };
 
     bat = {
