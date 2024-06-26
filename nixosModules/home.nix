@@ -29,6 +29,7 @@
 
     targets = {
       waybar.enableCenterBackColors = true;
+      rofi.enable = false;
     };
   };
 
@@ -54,6 +55,10 @@
     mpv
     xdg-utils
     pavucontrol
+    dolphin
+    bottles
+    lutris
+    protonup
 
     wayshot
     waybar
@@ -88,6 +93,7 @@
     EDITOR = "nvim";
     MANPAGER="sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT="-c";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "${config.home.homeDirectory}/.steam/root/compatibilitytools.d";
   };
 
   xdg.mimeApps.defaultApplications = {
@@ -115,6 +121,7 @@
     rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
+      theme = ./rofi/config.rasi;
     };
 
     bat = {
