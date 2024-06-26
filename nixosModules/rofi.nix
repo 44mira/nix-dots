@@ -219,9 +219,9 @@
         spacing:                     10px;
         margin:                      0px;
         padding:                     15px;
-        border:                      1px solid;
+        border:                      0px solid;
         border-radius:               12px;
-        border-color:                @selected-normal-foreground;
+        border-color:                @selected;
         background-color:            transparent;
         text-color:                  @foreground;
         children:                    [ "prompt", "entry" ];

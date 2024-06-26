@@ -10,5 +10,6 @@
     ./fastfetch.nix
     ./rofi.nix
     ./hyprlock.nix
+    ./yazi.nix
   ];
 }

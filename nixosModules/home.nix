@@ -113,10 +113,6 @@
       userEmail = "legolaslada@gmail.com";
     };
 
-    yazi = {
-      enable = true;
-    };
-
     waybar = {
       enable = true;
     };
@@ -128,6 +124,19 @@
       };
     };
 
+  };
+
+  services = {
+    dunst = {
+      enable = true;
+      settings = {
+        global = {
+          offset = "20x20";
+          corner_radius = 10;
+          icon_theme = "Adwaita";
+        };
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
