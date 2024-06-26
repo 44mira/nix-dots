@@ -24,6 +24,7 @@ in
         "~/nix-dots"
         "~/nix-dots/nixosModules"
         "~/nix-dots/nixosModules/nixvim"
+        "~/.config/hypr"
       ];
 
       lists = [
