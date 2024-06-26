@@ -14,6 +14,7 @@
     };
 
     stylix.url = "github:danth/stylix";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     nur.url = "github:nix-community/NUR";
 

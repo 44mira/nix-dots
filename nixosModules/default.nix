@@ -9,5 +9,6 @@
     ./nixvim
     ./fastfetch.nix
     ./hyprlock.nix
+    ./hyprland.nix
   ];
 }
