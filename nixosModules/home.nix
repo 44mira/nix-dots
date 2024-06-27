@@ -50,7 +50,6 @@
     oh-my-posh
     lazygit
     fastfetch
-    gh
     (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     sxiv
@@ -127,6 +126,11 @@
       };
     };
 
+    gh = {
+      enable = true;
+
+      gitCredentialHelper.enable = true;
+    };
   };
 
   services = {
