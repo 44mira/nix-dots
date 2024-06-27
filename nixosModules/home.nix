@@ -62,6 +62,7 @@
     lutris
     protonup
     sops
+    btop
 
     wayshot
     waybar

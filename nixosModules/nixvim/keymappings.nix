@@ -59,6 +59,9 @@
           "<leader>bd" = "<CMD>:bd!<CR>";
           "<leader>b[" = "<CMD>:bp<CR>";
           "<leader>b]" = "<CMD>:bn<CR>";
+
+          "<leader>t" = "<Plug>(leap)";
+          "<leader>gt" = "<Plug>(leap-from-window)";
         };
 
       visual =
