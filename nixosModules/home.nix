@@ -81,6 +81,7 @@
     unzip
     wget
     curl
+    file
   ];
 # }}}
 
