@@ -63,6 +63,7 @@
     protonup
     sops
     btop
+    killall
 
     wayshot
     waybar
@@ -70,6 +71,7 @@
     wl-clipboard
 
     python3
+    lua
     nodejs
     go
 
