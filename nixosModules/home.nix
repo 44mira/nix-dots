@@ -62,6 +62,7 @@
     bottles
     lutris
     protonup
+    sops
 
     wayshot
     waybar

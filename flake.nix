@@ -17,6 +17,8 @@
 
     nur.url = "github:nix-community/NUR";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+
     # external vim plugins
     plugin-silicon = {
       url = "github:michaelrommel/nvim-silicon";
