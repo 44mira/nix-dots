@@ -88,9 +88,10 @@
     ".omptheme.omp.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/omptheme.omp.toml";
     "Pictures/nixchan.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixchan.png";
     ".config/hypr/start.sh".source = config.lib.file.mkOutOfStoreSymlink ./hypr/start.sh;
-    ".config/waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./waybar/config;
-    ".config/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland.conf;
   };
+
+  xdg.configFile."waybar/config".source = config.lib.file.mkOutOfStoreSymlink ./waybar/config;
+  xdg.configFile."hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink ./hypr/hyprland.conf;
 
   home.sessionVariables = {
     EDITOR = "nvim";

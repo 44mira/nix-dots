@@ -15,7 +15,7 @@
 
   "group/bat": {
       "orientation": "horizontal",
-      "modules": ["battery", "backlight"]
+      "modules": ["power-profiles-daemon", "battery", "backlight"]
   },
 
   "group/net": {
@@ -66,6 +66,18 @@
       "format": "\udb81\udd7e  {volume}%",
       "max-volume": 100,
       "scroll-step": 5
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
+    }
   },
 
   "battery": {

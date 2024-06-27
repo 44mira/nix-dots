@@ -6,6 +6,7 @@
     enableCompletion = true;
     shellAliases = {
       hms = "home-manager switch --flake ~/nix-dots#tyrael";
+      ns = "nix develop --command zsh";
       nv = "nvim";
       lg = "lazygit";
       ff = "fastfetch --disable-linewrap";
@@ -16,6 +17,15 @@
     };
     initExtra = ''
       eval "$(oh-my-posh init zsh --config ~/.omptheme.omp.toml)"
+
+      function yy() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+          cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+      }
     '';
   };
 
