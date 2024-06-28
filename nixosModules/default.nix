@@ -11,5 +11,6 @@
     ./rofi.nix
     ./hyprlock.nix
     ./yazi.nix
+    ./hyprland.nix
   ];
 }

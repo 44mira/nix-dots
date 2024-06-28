@@ -1,8 +1,7 @@
-
 {
   programs.nixvim.plugins.lualine = {
     enable = true;
-    
+
     sections = {
 
       lualine_b = [
@@ -23,7 +22,7 @@
       ];
 
       lualine_z = [
-        "(function() return [[  sharmaigne]] end)()"
+        "(function() return [[ ]] end)()"
       ];
 
     };

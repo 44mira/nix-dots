@@ -64,6 +64,7 @@
     sops
     btop
     killall
+    caligula
 
     wayshot
     waybar
