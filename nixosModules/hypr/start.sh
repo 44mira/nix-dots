@@ -2,7 +2,8 @@
 
 # wallpaper
 swww init &
-swww img & ~/Pictures/nixchan.png
+swww img &
+~/Pictures/nixchan.png
 
 # network manager
 nm-applet --indicator &

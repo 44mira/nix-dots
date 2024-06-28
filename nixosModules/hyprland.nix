@@ -1,10 +1,35 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
+# [[ STARTUP SCRIPT ]] {{{
+let
+  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+
+    # Status bar
+    $(pkgs.waybar)/bin/waybar &
+
+    # Wallpaper
+    $(pkgs.swww)/bin/swww init &
+
+    # Network Manager
+    $(pkgs.nm-applet)/bin/nm-applet --indicator &
+
+    # Notifications
+    $(pkgs.dunst)/bin/dunst &
+
+    sleep 1
+
+    $(pkgs.swww)/bin/swww img ~/Pictures/nixchan.png &
+
+  '';
+in # }}}
 {
   wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
+
+      exec-once = ''${startupScript}/bin/start'';
+
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "rofi -show drun -show-icons";
@@ -28,8 +53,9 @@
 
         border_size = 2;
 
-        "col.active_border" = "rgba(aaaaaaee) rgba(555555ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        # Overridden by stylix
+        # "col.active_border" = "rgba(aaaaaaee) rgba(555555ee) 45deg";
+        # "col.inactive_border" = "rgba(595959aa)";
 
         resize_on_border = false;
         allow_tearing = false;
@@ -47,12 +73,13 @@
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
+        # Overriden by stylix
+        # "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
           enabled = true;
           size = 3;
-          passes = 1;
+          passes = 3;
 
           vibrancy = 0.1696;
         };

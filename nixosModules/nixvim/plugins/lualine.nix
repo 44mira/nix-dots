@@ -22,7 +22,7 @@
       ];
 
       lualine_z = [
-        "(function() return [[ ]] end)()"
+        "(function() return [[  sharms]] end)()"
       ];
 
     };

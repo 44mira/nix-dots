@@ -17,8 +17,6 @@
 
     nur.url = "github:nix-community/NUR";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     # external vim plugins
     plugin-silicon = {
       url = "github:michaelrommel/nvim-silicon";
